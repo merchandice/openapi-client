@@ -28,6 +28,9 @@ module OpenapiClient
     # The request URL to be used when sending the webhook.
     attr_accessor :url
 
+    # The key to iterate over.
+    attr_accessor :for_each
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -56,7 +59,8 @@ module OpenapiClient
         :'headers' => :'headers',
         :'body' => :'body',
         :'method' => :'method',
-        :'url' => :'url'
+        :'url' => :'url',
+        :'for_each' => :'for_each'
       }
     end
 
@@ -69,9 +73,10 @@ module OpenapiClient
     def self.openapi_types
       {
         :'headers' => :'Hash<String, String>',
-        :'body' => :'Hash<String, Object>',
+        :'body' => :'String',
         :'method' => :'String',
-        :'url' => :'String'
+        :'url' => :'String',
+        :'for_each' => :'String'
       }
     end
 
@@ -103,9 +108,7 @@ module OpenapiClient
       end
 
       if attributes.key?(:'body')
-        if (value = attributes[:'body']).is_a?(Hash)
-          self.body = value
-        end
+        self.body = attributes[:'body']
       end
 
       if attributes.key?(:'method')
@@ -114,6 +117,10 @@ module OpenapiClient
 
       if attributes.key?(:'url')
         self.url = attributes[:'url']
+      end
+
+      if attributes.key?(:'for_each')
+        self.for_each = attributes[:'for_each']
       end
     end
 
@@ -152,7 +159,8 @@ module OpenapiClient
           headers == o.headers &&
           body == o.body &&
           method == o.method &&
-          url == o.url
+          url == o.url &&
+          for_each == o.for_each
     end
 
     # @see the `==` method
@@ -164,7 +172,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [headers, body, method, url].hash
+      [headers, body, method, url, for_each].hash
     end
 
     # Builds the object from hash

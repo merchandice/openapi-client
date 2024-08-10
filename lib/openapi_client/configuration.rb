@@ -244,12 +244,19 @@ module OpenapiClient
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'basic_auth' =>
+        'oauth' =>
           {
-            type: 'basic',
+            type: 'oauth2',
             in: 'header',
             key: 'Authorization',
-            value: basic_auth_token
+            value: "Bearer #{access_token_with_refresh}"
+          },
+        'oauth' =>
+          {
+            type: 'oauth2',
+            in: 'header',
+            key: 'Authorization',
+            value: "Bearer #{access_token_with_refresh}"
           },
       }
     end

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | The name assigned to the data item. | [optional] |
 | **type** | **String** | The type of data item. | [optional] |
-| **selector** | [**ScraperDataItemSelector**](ScraperDataItemSelector.md) |  | [optional] |
+| **selector** | [**ScraperDataItemSelector**](.md) |  | [optional] |
 | **required** | **Boolean** | Indicates if the data item is required. | [optional] |
 | **output_format** | **String** | The output format of the data item. | [optional] |
 | **id** | **String** | The unique identifier for the scraper data item. | [optional] |

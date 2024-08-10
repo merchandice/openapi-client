@@ -59,9 +59,15 @@ require 'openapi_client'
 
 # Setup authorization
 OpenapiClient.configure do |config|
-  # Configure HTTP basic authorization: basic_auth
-  config.username = 'YOUR_USERNAME'
-  config.password = 'YOUR_PASSWORD'
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+  # Configure a proc to get access tokens in lieu of the static access_token configuration
+  config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
+
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+  # Configure a proc to get access tokens in lieu of the static access_token configuration
+  config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
 end
 
 api_instance = OpenapiClient::ActionsApi.new
@@ -127,7 +133,23 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-### basic_auth
+### oauth
 
-- **Type**: HTTP basic authentication
+
+- **Type**: OAuth
+- **Flow**: password
+- **Authorization URL**: 
+- **Scopes**: 
+  - read: Allows reading data from the API.
+  - write: Allows writing data to the API.
+
+### oauth
+
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: 
+  - read: Allows reading data from the API.
+  - write: Allows writing data to the API.
 

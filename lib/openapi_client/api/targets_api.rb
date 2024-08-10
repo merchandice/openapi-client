@@ -61,7 +61,7 @@ module OpenapiClient
       return_type = opts[:debug_return_type] || 'Array<ScraperTargetResponse>'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['basic_auth']
+      auth_names = opts[:debug_auth_names] || ['oauth', 'oauth']
 
       new_options = opts.merge(
         :operation => :"TargetsApi.api_scrapers_scraper_id_targets_get",
@@ -128,7 +128,7 @@ module OpenapiClient
       return_type = opts[:debug_return_type] || 'ScraperTargetResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['basic_auth']
+      auth_names = opts[:debug_auth_names] || ['oauth', 'oauth']
 
       new_options = opts.merge(
         :operation => :"TargetsApi.api_scrapers_scraper_id_targets_id_get",
